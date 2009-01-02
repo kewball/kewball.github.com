@@ -1,47 +1,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8"  />
-    <title>bryanl</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>kewball</title>
     <style type="text/css">
       * {
         margin: 0;
         padding: 0;
       }
-
-      body {
-        background: url(bryanl.png) no-repeat;
-	color: #fff
+ 
+      body { color: white; background-color: black }
+      
+      #pictureframe {
+        position: absolute;
+        left: 350px;
+        top: 30px;
+        border: thick solid #333;
       }
-
+ 
       ul {
         position: absolute;
-        left: 850px;
+        left: 50px;
         top: 30px;
         list-style-type: none;
       }
-
+ 
       #repos {
         top: 130px;
       }
-
+ 
       a {
         color: #eee;
         font-family: Lucida Grande;
         line-height: 18px;
       }
-
+ 
       h3 {
-        font-family: Lucida Grande;      
+        font-family: Lucida Grande;
       }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(function() {
-        var limit = 10        // how many repos to list
-        var login = 'bryanl' // your username
+        var limit = 10 // how many repos to list
+        var login = 'kewball' // your username
 
         $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
           var repos = $.grep(data.user.repositories, function() {
@@ -55,18 +59,19 @@
           $.each(repos.slice(0, limit), function() {
             $('#repos').append('<li><a href="' + this.url + '">' + this.name + '</a></li>')
           })
-        })        
+        })
       })
     </script>
   </head>
   <body>
     <ul>
-      <li><a href="http://twitter.com/bryanl">twitter.com/bryanl</a></li>
-      <li><a href="http://github.com/bryanl">github.com/bryanl</a></li>
-      <li><a href="mailto:iam@smartic.us">iam</a>@<a href="http://smartic.us">smartic.us</a></li>
+      <li><a href="http://twitter.com/bryanl">twitter.com/kewball</a></li>
+      <li><a href="http://github.com/bryanl">github.com/kewball</a></li>
+      <li><a href="mailto:51@triopticon.com">51</a>@<a href="http://www.triopticon.com">triopticon.com</a></li>
     </ul>
     <ul id="repos">
       <li><h3>repositories</h3></li>
     </ul>
+    <img id="pictureframe" src="ks.jpg" />
   </body>
 </html>
